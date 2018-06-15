@@ -1,0 +1,185 @@
+/* Styles */
+* {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+/*navigation*/
+.nav-container {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	right: 0;
+	left: 0;
+}
+
+/*Hiragana and Hatakana Navigation*/
+a {
+	text-align: center;
+	text-decoration: none;
+	color: #f2f2f2;
+}
+ul {
+  list-style-type: none;
+  margin-top: 0;
+  vertical-align: middle;
+}
+
+li a {	
+    float: left;
+    display: block;
+    padding: 17px;
+}
+/* Change background on mouse-over */
+li a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/*Grammar Navigation*/
+.nav-dropdown {
+  display: block;
+}
+.nav-grammar, .nav-5w1h {
+    padding: 16px 17px 18px 17px;
+	margin-top: 0px;
+}
+.nav-dropdown a:hover {
+	background: #ddd;
+    color: black;
+}
+
+/* 5W1H Navigation*/
+
+
+
+.dropdown-container{
+	float: none;
+	display: block;
+	margin-top: 18px;
+}
+
+.dropdown-content {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+	display: none;
+}
+
+/*Introduction*/
+.introduction-section {
+	margin: 60px 150px 0px 150px;
+}
+.introduction-section p  {
+	text-align: left;
+}
+
+/*Hiragana table*/
+.table{
+	display: table;
+	margin: auto;
+}
+/*.table-body {
+	display: table-row-group;
+}
+*/
+.table-row {
+	display: table-row;
+}
+.table-cell{
+	border: 1px solid #999999;
+	display: table-cell;
+}
+.table-row-header {
+	padding: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
+.table-column-header {
+	padding: 0px 10px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+}
+.table-cell button {
+	padding: 13px 16px 13px 16px;
+	border: 0px;
+	background-color: white;
+	margin: auto;
+	width: 100%;
+	display: block;
+	font-size: 18px;
+	font-weight: 800;
+}
+.table-cell button:hover {
+	background-color: #333;
+	color: white;
+}
+.cell-youon {
+	padding: 13px 16px;
+	font-size:  15px;
+}
+#dakuon-table, #handakuon-table {
+	display: table-row;
+}
+
+/* Word Selection */
+.category-container {
+	margin-top: 17px;
+	padding: 3px;
+	background-color: red;
+	display: block;
+	overflow: hidden;
+}
+.category-container a {
+	padding: 0px;
+	color: #333;
+}
+
+/*Question Section*/
+.question-section-container {
+	background-color: red;
+	display: flex;
+}
+
+.back-container {
+	background-color: yellow;
+	padding: 50 px;
+	flex: 1;
+}
+.back-button {
+	float: right;
+}
+
+.next-container {
+	background-color: blue;
+	padding: 50 px;
+	flex: 1;
+}
+
+.question-container {
+	background-color: green;
+	padding: 50 px;
+	flex: 1;
+}
+
+/*Answer Section*/
+.answer-section-container {
+	display: flex;
+}
+
+.answer  {
+	flex: 1;
+	background-color: orange;
+}
+
+
+/*Footer*/
+footer {
+	margin: auto;
+	text-align: center;
+	background-color: pink;
+}
