@@ -168,14 +168,22 @@ li a:hover {
 
 /*Answer Section*/
 .answer-section-container {
-	display: flex;
+	background-color: pink;
+	padding: 25px 100px;
+}
+
+div:empty:before {
+  content:attr(data-placeholder);
+  color:gray
 }
 
 .answer  {
-	flex: 1;
 	background-color: orange;
+	border:1px solid black;
+	padding: 20px;
+	margin: 0px;
+	text-align: center;
 }
-
 
 /*Footer*/
 footer {
