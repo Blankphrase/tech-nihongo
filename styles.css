@@ -141,12 +141,12 @@ li a:hover {
 
 /*Question Section*/
 .question-section-container {
-	background-color: red;
+	background-color: red; /*test*/
 	display: flex;
 }
 
 .back-container {
-	background-color: yellow;
+	background-color: yellow; /*test*/
 	padding: 50 px;
 	flex: 1;
 }
@@ -155,20 +155,23 @@ li a:hover {
 }
 
 .next-container {
-	background-color: blue;
+	background-color: blue; /*test*/
 	padding: 50 px;
 	flex: 1;
 }
 
 .question-container {
-	background-color: green;
-	padding: 50 px;
+	background-color: green; /*test*/
+	padding: 50 px; 
 	flex: 1;
+}
+.english, .romaji {
+	text-align: center;
 }
 
 /*Answer Section*/
 .answer-section-container {
-	background-color: pink;
+	background-color: pink; /*test*/
 	padding: 25px 100px;
 }
 
@@ -178,16 +181,20 @@ div:empty:before {
 }
 
 .answer  {
-	background-color: orange;
+	background-color: orange; /*test*/
 	border:1px solid black;
 	padding: 20px;
 	margin: 0px;
 	text-align: center;
 }
+.default-message {
+	color: #f2f2f2;
+}
+
 
 /*Footer*/
 footer {
 	margin: auto;
 	text-align: center;
-	background-color: pink;
+	background-color: pink; /*test*/
 }

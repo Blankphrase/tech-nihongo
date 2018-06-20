@@ -59,25 +59,56 @@ for (var key in greetingList) {
 const english = document.querySelector(" .english");
 const romaji = document.querySelector(" .romaji");
 const greetings = document.querySelector(" .greetings");
-console.log(greetings)
-function load() {
-	let english = [], romaji = [];	
+//test
+console.log(english, romaji, greetings);
+
+var englishList = function () {
+	let englishList = [];
 	for (var key in greetingList) {
-		english.push(greetingList[key][0]);
-		romaji.push(greetingList[key][1]);
+		englishList.push(greetingList[key][0]);
+	}
+	return english.innerHTML = englishList;
+}
+var romajiList = function () {
+	let romajiList = [];
+	for (var key in greetingList) {
+		romajiList.push(greetingList[key][1]);
+	}
+	return romaji.innerHTML = romajiList;
+};
+greetings.addEventListener("click",englishList);
+greetings.addEventListener("click",romajiList);
+
+console.log(englishList, romajiList);
+
+//Not working
+const nextButton = document.querySelector(" .next-button");
+function displayNext() {
+	for (var i = 0; i < englishList.length; i++) {
+		if (typeof nextButton.onclick) {
+			return english.innerHTML = englishList[i+1]
+		}
 	}
 }
-greetings.addEventListener("click", load);
+nextButton.addEventListener("click", displayNext);
 
 //Onclick on the button element, display the value.
-const hiragana = document.querySelectorAll(" .table-cell");
-console.log(hiragana);
-function display(){
+const hiraganaInput = document.querySelectorAll(".table-cell button");
+//test OMG it works thanks StackOverFlow
+function hiraganaOutput() {
+	var inputArea = document.querySelector(" .hiraganaOutput");
+	inputArea.textContent += this.textContent.trim();
+}
+buttonArray = Array.prototype.slice.call(hiraganaInput);
+buttonArray.forEach(function(button) {
+	button.addEventListener("click", hiraganaOutput)
+});
 
-}
-for (var i = 0; i < hiragana.length; i++) {
-	hiragana[i].addEventListener("click", display);	
-}
-document.onselectionchange = function() {
- 
-}
+//Hide the message when hiraganaInput
+const defaultMessage = document.querySelector(" .default-message");
+
+//Compare the input and greetings keys
+//Reset the content
+
+
+
