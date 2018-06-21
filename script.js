@@ -103,12 +103,23 @@ buttonArray = Array.prototype.slice.call(hiraganaInput);
 buttonArray.forEach(function(button) {
 	button.addEventListener("click", hiraganaOutput)
 });
+console.log(inputArea);
 
 //Hide the message when hiraganaInput
 const defaultMessage = document.querySelector(" .default-message");
+function hideMessage() {
+
+
+}
+defaultMessage.addEventListener("click", hideMessage);
 
 //Compare the input and greetings keys
 //Reset the content
-
-
+const resetButton = document.getElementById("reset-button");
+console.log(resetButton);
+function resetInput(e) {
+	e.preventDefault();
+	defaultMessage.style.display = "block";	
+}
+resetButton.addEventListener("click", resetInput);
 
