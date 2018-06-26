@@ -1,39 +1,28 @@
-const dropdown5w1h = document.querySelector(".nav-5w1h"); 
-const dropdownContent = document.querySelectorAll(".dropdown-content");
-const dropdownContainer = document.querySelector(" .mouseout");
+const navGrammer = document.querySelector(".nav-grammar");
+const dropdownContentGrammar = document.querySelector(".dropdown-content-grammar");
+const nav5w1h = document.querySelector(".nav-5w1h");
+const dropdownContent5w1h = document.querySelector(".dropdown-content-5w1h");
 
-//Test
-console.log(dropdown5w1h);
-console.log(toString.call(dropdownContent));
-console.log(dropdownContainer);
+//test
+console.log(nav5w1h, navGrammer, dropdownContentGrammar, dropdownContent5w1h);
 
+function showGrammar(){
+		dropdownContentGrammar.style.display = "block";
+		
+}
+navGrammer.addEventListener("mouseover", showGrammar, false);
+navGrammer.addEventListener("mouseleave", function hide(){
+		dropdownContentGrammar.style.display = "none";
+});
 //Hover the 5W1H, show the hidden dropdown menu.
 //Hover the shown dropdown menue, keep showing the menu
 //Mouse out from 5W1H and dropdown menu, remove the menu
-function show() {
-	for(var i = 0; i < dropdownContent.length; i++) {
-		if (dropdownContent[i].style.display === "none") {
-			dropdownContent[i].style.display = "block";
-			//dropdownContainer.classList.remove("mouseout");
-			//dropdownContainer.classList.add("mouseover");
-		} else {
-			dropdownContent[i].style.display = "none";
-		}
-	}
-}
-console.log(dropdownContainer);
-function hide() {
-	for (var i = 0; i < dropdownContent.length; i++) {
-		if (dropdownContent[i].style.display === "block" && dropdownContainer === "mouseover"){
-			dropdownContent[i].style.display = "none";
-		} else {
-			dropdownContent[i].style.display = "block";
-		}		
-	}
-}
-
-dropdown5w1h.addEventListener("mouseover", show);
-//dropdown5w1h.addEventListener("mouseleave", hide);
+nav5w1h.addEventListener("mouseover", function show(){
+		dropdownContent5w1h.style.display = "block";
+});
+nav5w1h.addEventListener("mouseleave", function hide(){
+		dropdownContent5w1h.style.display = "none";
+});
 
 //test
 const greetingList = {
@@ -95,15 +84,15 @@ nextButton.addEventListener("click", displayNext);
 //Onclick on the button element, display the value.
 const hiraganaInput = document.querySelectorAll(".table-cell button");
 //test OMG it works thanks StackOverFlow
-function hiraganaOutput() {
+function outputChar() {
 	var inputArea = document.querySelector(" .hiraganaOutput");
 	inputArea.textContent += this.textContent.trim();
 }
 buttonArray = Array.prototype.slice.call(hiraganaInput);
 buttonArray.forEach(function(button) {
-	button.addEventListener("click", hiraganaOutput)
+	button.addEventListener("click", outputChar)
 });
-console.log(inputArea);
+//console.log(inputArea);
 
 //Hide the message when hiraganaInput
 const defaultMessage = document.querySelector(" .default-message");
@@ -115,11 +104,11 @@ defaultMessage.addEventListener("click", hideMessage);
 
 //Compare the input and greetings keys
 //Reset the content
-const resetButton = document.getElementById("reset-button");
-console.log(resetButton);
-function resetInput(e) {
-	e.preventDefault();
-	defaultMessage.style.display = "block";	
-}
-resetButton.addEventListener("click", resetInput);
+// const resetButton = document.getElementById("reset-button");
+// console.log(resetButton);
+// function resetInput(e) {
+	// e.preventDefault();
+	// defaultMessage.style.display = "block";	
+// }
+// resetButton.addEventListener("click", resetInput);
 

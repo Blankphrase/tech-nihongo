@@ -37,7 +37,7 @@ li a:hover {
     color: black;
 }
 
-/*Grammar Navigation*/
+/*Grammar&5W1H Navigation*/
 .nav-dropdown {
   display: block;
 }
@@ -45,27 +45,21 @@ li a:hover {
     padding: 16px 17px 18px 17px;
 	margin-top: 0px;
 }
-.nav-dropdown a:hover {
+.nav-grammar a:hover, .nav-5w1h a:hover {
 	background: #ddd;
     color: black;
 }
-
-/* 5W1H Navigation*/
-
-
-
-.dropdown-container{
+.dropdown-content-grammar, .dropdown-content-5w1h {
 	float: none;
-	display: block;
+	display: none;
 	margin-top: 18px;
 }
-
-.dropdown-content {
+.dropdown-content-grammar a, .dropdown-content-5w1h a {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
-	display: none;
+	display: block;
 }
 
 /*Introduction*/
