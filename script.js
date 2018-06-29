@@ -2,27 +2,29 @@ const navGrammer = document.querySelector(".nav-grammar");
 const dropdownContentGrammar = document.querySelector(".dropdown-content-grammar");
 const nav5w1h = document.querySelector(".nav-5w1h");
 const dropdownContent5w1h = document.querySelector(".dropdown-content-5w1h");
-
-//test
 console.log(nav5w1h, navGrammer, dropdownContentGrammar, dropdownContent5w1h);
 
 function showGrammar(){
-		dropdownContentGrammar.style.display = "block";
-		
+	dropdownContentGrammar.style.display = "block";	
 }
-navGrammer.addEventListener("mouseover", showGrammar, false);
-navGrammer.addEventListener("mouseleave", function hide(){
-		dropdownContentGrammar.style.display = "none";
-});
-//Hover the 5W1H, show the hidden dropdown menu.
-//Hover the shown dropdown menue, keep showing the menu
-//Mouse out from 5W1H and dropdown menu, remove the menu
-nav5w1h.addEventListener("mouseover", function show(){
-		dropdownContent5w1h.style.display = "block";
-});
-nav5w1h.addEventListener("mouseleave", function hide(){
+function hideGrammar(){
+	dropdownContentGrammar.style.display = "none";
+}
+navGrammer.addEventListener("mouseover", showGrammar);
+dropdownContentGrammar.addEventListener("mouseover", showGrammar);
+navGrammer.addEventListener("mouseleave", hideGrammar);
+dropdownContentGrammar.addEventListener("mouseleave", hideGrammar);
+
+function show5w1h(){
+	dropdownContent5w1h.style.display = "block";
+}
+function hide5w1h(){
 		dropdownContent5w1h.style.display = "none";
-});
+}
+nav5w1h.addEventListener("mouseover", show5w1h);
+dropdownContent5w1h.addEventListener("mouseover", show5w1h);
+dropdownContent5w1h.addEventListener("mouseleave", hide5w1h);
+nav5w1h.addEventListener("mouseleave", hide5w1h);
 
 //test
 const greetingList = {
@@ -34,7 +36,6 @@ const greetingList = {
 		"ばいばい": ["bye", "baibai"],
 		"またあとで": ["see you later", "mataatode"]
 }
-//test
 console.log(greetingList["おはよう"]);
 for (var key in greetingList) {
 	if (greetingList.hasOwnProperty(key)){
@@ -47,8 +48,7 @@ for (var key in greetingList) {
 //Hit back, disply the previous word.
 const english = document.querySelector(" .english");
 const romaji = document.querySelector(" .romaji");
-const greetings = document.querySelector(" .greetings");
-//test
+const greetings = document.querySelector(" #greetings");
 console.log(english, romaji, greetings);
 
 var englishList = function () {
@@ -65,14 +65,17 @@ var romajiList = function () {
 	}
 	return romaji.innerHTML = romajiList;
 };
-greetings.addEventListener("click",englishList);
-greetings.addEventListener("click",romajiList);
+console.log(englishList(), romajiList());
 
-console.log(englishList, romajiList);
-
+function showQuestion(){
+	console.log(englishList());
+}
+console.log(showQuestion());
+greetings.addEventListener("click",showQuestion());
 //Not working
 const nextButton = document.querySelector(" .next-button");
 function displayNext() {
+	englishList();
 	for (var i = 0; i < englishList.length; i++) {
 		if (typeof nextButton.onclick) {
 			return english.innerHTML = englishList[i+1]
