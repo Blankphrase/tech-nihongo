@@ -15,21 +15,19 @@
 }
 
 /*Hiragana and Hatakana Navigation*/
-a {
-	text-align: center;
-	text-decoration: none;
-	color: #f2f2f2;
-}
 ul {
   list-style-type: none;
   margin-top: 0;
+  position: relative;
   vertical-align: middle;
 }
-
 li a {	
     float: left;
     display: block;
     padding: 17px;
+	text-align: center;
+	text-decoration: none;
+	color: #f2f2f2;
 }
 /* Change background on mouse-over */
 li a:hover {
@@ -38,9 +36,6 @@ li a:hover {
 }
 
 /*Grammar&5W1H Navigation*/
-.nav-dropdown {
-  display: block;
-}
 .nav-grammar, .nav-5w1h {
     padding: 16px 17px 18px 17px;
 	margin-top: 0px;
@@ -50,17 +45,18 @@ li a:hover {
     color: black;
 }
 .dropdown-content-grammar, .dropdown-content-5w1h {
-	float: none;
-	display: none;
-	margin-top: 18px;
+	position: absolute;
+    min-width: 160px;
+    z-index: 1;
+	
 }
-
 .dropdown-content-grammar a, .dropdown-content-5w1h a {
     background-color: #4CAF50;
     color: white;
     padding: 16px;
     font-size: 16px;
 	display: block;
+
 }
 
 /*Introduction*/
@@ -182,7 +178,7 @@ div:empty:before {
 	margin: 0px;
 	text-align: center;
 }
-.default-message {
+.output-area {
 	color: #f2f2f2;
 }
 .hide-message {
