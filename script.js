@@ -27,15 +27,6 @@ dropdownContent5w1h.addEventListener("mouseleave", hide5w1h);
 nav5w1h.addEventListener("mouseleave", hide5w1h);
 
 //test
-const greetingList = {
-		"おはよう" : ["good morning", "ohayou"],
-		"こんにちは": ["hello", "konnichiha"],
-		"こんばんは": ["good evening", "konbanha"],
-		"おやすみ": ["good night", "oyasumi"], 
-		"さようなら": ["good bye", "sayounara"],
-		"ばいばい": ["bye", "baibai"],
-		"またあとで": ["see you later", "mataatode"]
-}
 const greetingListTest = {
 		"おはよう" : {"good morning":"ohayou"},
 		"こんにちは": {"hello":"konnichiha"},
@@ -45,11 +36,8 @@ const greetingListTest = {
 		"ばいばい": {"bye":"baibai"},
 		"またあとで": {"see you later":"mataatode"}
 }
-console.log(greetingList["おはよう"]);
-for (var key in greetingList) {
-	if (greetingList.hasOwnProperty(key)){
-		console.log(key);
-	}
+for(var key in greetingListTest.おはよう){
+	console.log(key);
 }
 
 //Onlick display english-romaji list one word at a time. 
@@ -58,40 +46,32 @@ const romaji = document.querySelector(" .romaji");
 const greetings = document.querySelector(" #greetings");
 console.log(english, romaji, greetings);
 
-var englishList = function () {
-	let englishList = [];
-	for (var key in greetingList) {
-		englishList.push(greetingList[key][0]);
-	}
-	return english.innerHTML = englishList;
-}
-var romajiList = function () {
-	let romajiList = [];
-	for (var key in greetingList) {
-		romajiList.push(greetingList[key][1]);
-	}
-	return romaji.innerHTML = romajiList;
-};
-console.log(englishList(), romajiList());
 
-function showQuestion(){
-	console.log(englishList());
-}
-console.log(showQuestion());
-greetings.addEventListener("click",showQuestion());
-//Hit next, disply next word in the array.
-//Hit back, disply the previous word.
-//Not working
-const nextButton = document.querySelector(" .next-button");
-function showNext() {
-	englishList();
-	for (var i = 0; i < englishList.length; i++) {
-		if (typeof nextButton.onclick) {
-			return english.innerHTML = englishList[i+1]
+//Create a function to load list of words
+const COMPLETED = 4;
+const OK = 200;
+function loadWord() {
+	let xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if(this.readyState == COMPLETED && 
+			this.status == OK){
+			//show the first word
+			
 		}
+		xhrequest.open("GET", "/greetings");
+		xhrequest.send();
 	}
 }
-nextButton.addEventListener("click", showNext);
+greetings.addEventListener("click", loadWord);
+
+//Create a slide function that is fired when clicking next and back
+const nextButton = document.querySelector(" .next-button");
+const backButton = document.querySelector(" .back-button");
+function slideWord() {
+
+}
+nextButton.addEventListener("click", slideWord);
+backButton.addEventListener("click", slideWord);
 
 //Onclick on the button element, display the value.
 const hiraganaInput = document.querySelectorAll(".table-cell button");
@@ -116,18 +96,17 @@ resetButton.addEventListener("click", resetOutput);
 
 //check user answer and displayed hiragana is same.
 function checkAnswer(){
-	//Get keys in String of hiragana ojbects
-	//convert them toString
-	//Store in an array variable.
+	//Get hiragana
 	//Get current user input.
 	//Compare the two Strings.
 	//If true, show in blue color, else in red.
-} 
+}
 
 //show the correct hiragana spelling.
 const answerButton = document.getElementById("answer-button");
 function showAnswer(){
- //Get keys in String of hiragana ojbects
- //Check which key is displayed on the screen
- //Display it
+ // Get keys in String of hiragana ojbects
+ // Check which key is displayed on the screen
+ // Display it
+}
 answerButton.addEventListener("click", showAnswer);
